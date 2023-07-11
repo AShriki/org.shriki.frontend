@@ -10,4 +10,6 @@
 // }
 
 export * from "./MenuBar.js";
-export * from "./MenuBarItem.js";
+export * from "./MenuBarButton.js";
+export * from "./MenuBarHideShow.js";
+export * from "./Page.js";

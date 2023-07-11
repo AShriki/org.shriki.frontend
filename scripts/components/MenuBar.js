@@ -1,19 +1,25 @@
-import {MenuBarItem} from "./MenuBarItem.js"
+import {MenuBarHideShow} from "../components/components.js";
 
-export function MenuBar({ menuItemDetails, props }){
-    let visible = true;
-    let menuItems = menuItemDetails.map(
+export function MenuBar({ items, props }){
+    let [hidden, setHidden] = React.useState(true);
+    let menuItems = items.map(
         (menuItemDetail)=>{
+            if (menuItemDetail.type == MenuBarHideShow){
+                menuItemDetail.props.setHidden = setHidden;
+                menuItemDetail.props.getHidden = hidden;
+            }else if (hidden){
+                return
+            }
             return React.createElement(
-                MenuBarItem,
-                menuItemDetail
+                menuItemDetail.type,
+                menuItemDetail.props,
+                menuItemDetail.children
             )
         }
     );
-    console.log(menuItems) 
     return React.createElement(
         'div',
-        props,
+        {className: 'menu-bar', ...props},
         ...menuItems
     );
 }

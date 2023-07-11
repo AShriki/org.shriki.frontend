@@ -1,27 +1,24 @@
-import {MenuBar, MenuBarItem} from "../components/components.js";
+import {MenuBar, MenuBarButton, Page, MenuBarHideShow} from "../components/components.js";
 
-const menuItemDetails = [
-    {
-        itemText: "about", 
-        props:{className: 'menu-bar-item'}
-    },
-    {
-        itemText: "projects", 
-        props:{className: 'menu-bar-item'}
-    }
+const menuItems = [
+    {type: MenuBarHideShow, props: {}},
+    {type: MenuBarButton, props: {itemText: "about"}}, 
+    {type: MenuBarButton, props: {itemText: "projects"}}
 ];
 
-export function HomePage(){   
-    console.log('HomePage') 
-    return React.createElement(
-        'div',
-        {},
-        React.createElement(
+const menuBar = React.createElement(
             MenuBar,
             {
-                menuItemDetails: menuItemDetails,
-                props: {className: 'menu-bar'}
+                items: menuItems
             }
-        )
+        );
+
+export function HomePage(){   
+    return React.createElement(
+        Page,
+        {
+            children: menuBar,
+            // props: {}
+        }
     );
-}
+};
