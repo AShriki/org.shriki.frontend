@@ -1,10 +1,10 @@
-import {MenuBarHideShow} from "../components/components.js";
+import {MenuHideShow} from "../components/components.js";
 
 export function MenuBar({ items, props }){
     let [hidden, setHidden] = React.useState(true);
     let menuItems = items.map(
         (menuItemDetail)=>{
-            if (menuItemDetail.type == MenuBarHideShow){
+            if (menuItemDetail.type == MenuHideShow){
                 menuItemDetail.props.setHidden = setHidden;
                 menuItemDetail.props.getHidden = hidden;
             }else if (hidden){
@@ -19,7 +19,7 @@ export function MenuBar({ items, props }){
     );
     return React.createElement(
         'div',
-        {className: 'menu-bar', ...props},
+        {className: 'nav-bar-vertical', ...props},
         ...menuItems
     );
 }
