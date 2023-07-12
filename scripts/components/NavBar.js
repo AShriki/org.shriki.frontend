@@ -1,7 +1,8 @@
 import {MenuHideShow} from "../components/components.js";
 
-export function MenuBar({ items, props }){
-    let [hidden, setHidden] = React.useState(true);
+export function NavBar({ items, props }){
+    // default to show
+    let [hidden, setHidden] = React.useState(false);
     let menuItems = items.map(
         (menuItemDetail)=>{
             if (menuItemDetail.type == MenuHideShow){

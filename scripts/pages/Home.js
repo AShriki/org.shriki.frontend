@@ -1,4 +1,4 @@
-import {MenuBar, MenuButton, MenuLink, Page, MenuHideShow, MenusOverlay} from "../components/components.js";
+import {NavBar, MenuButton, MenuLink, Page, MenuHideShow, MenusOverlay} from "../components/components.js";
 
 const menuItems = [
     {type: MenuHideShow, props: {}},
@@ -6,11 +6,11 @@ const menuItems = [
     {type: MenuLink, props: {itemText: "projects"}}
 ];
 
-const menuBar = React.createElement(
-            MenuBar,
+const navBar = React.createElement(
+            NavBar,
             {
                 items: menuItems,
-                props:{className: 'nav-bar-horizontal'}
+                props:{className: 'nav-bar-vertical'}
             }
         );
 
@@ -18,7 +18,7 @@ export function HomePage(){
     return React.createElement(
         MenusOverlay,
         {
-            children: menuBar,
+            children: navBar,
             // props: {}
         }
     );

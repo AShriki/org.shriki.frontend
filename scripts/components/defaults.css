@@ -1,3 +1,6 @@
+body{
+    all: unset;
+}
 .nav-bar-vertical {
     background-clip: border-box;
     background-color: lightgreen;
@@ -19,16 +22,17 @@
     flex-direction: row;
     height: 5vh;
     position: fixed;
-    /* width: 100%; */
 }
-
+.menu-hide-show-img-container{
+    display: flex;
+    height: 5vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
 .menu-hide-show-img{
-    all: unset;
-    /* user-select: none; */
-    justify-self: left;
-    align-self: center;
-    width: 30px;
-    height: 30px;
+    user-select: none;
+    height: 80%;
     transition: .25s transform ease;
 }
 
@@ -38,14 +42,16 @@
 .menu-button{
     all: unset;
     text-align: center;
-    /* user-select: none; */
-    width: 5vw;
-    height: 5vh;
+    user-select: none;
+    padding: 10vh 10vw;
+    height: 100%;
 }
 
 .menu-link {
-    /* user-select: none; */
-    padding: 1rem;
+    user-select: none;
+    text-align: center;
+    padding: 1em;
+    width: 100%;
 }
 
 .menu-link:hover {
@@ -61,11 +67,16 @@
 }
 
 @media only screen and (max-width: 500px) {
-    .menu-hide-show-img{
-        width: 50px;
-        height: 50px;       
+    .menu-hide-show-img-container{
+        height: 10vh;     
     }
     .nav-bar-horizontal {
-        height: 7vh;
+        height: 10vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .nav-bar-vertical{
+        width: 100%;
     }
 }
