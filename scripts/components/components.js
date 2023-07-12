@@ -11,6 +11,7 @@
 
 export * from "./NavBar.js";
 export * from "./MenuButton.js";
+export * from "./MenuLink.js";
 export * from "./MenuHideShow.js";
 export * from "./Page.js";
 export * from "./MenusOverlay.js";

@@ -1,26 +1,30 @@
 .nav-bar-vertical {
     background-clip: border-box;
     background-color: lightgreen;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100px;
-    position: relative;
+    position: fixed;
 }
 .nav-bar-horizontal {
     background-clip:border-box;
     background-color: aqua;
+    overflow: hidden;
     display: flex;
     justify-content: left;
     align-items: center;
     flex-direction: row;
     height: 5vh;
-    position: relative;
+    position: fixed;
+    /* width: 100%; */
 }
+
 .menu-hide-show-img{
     all: unset;
-    user-select: none;
+    /* user-select: none; */
     justify-self: left;
     align-self: center;
     width: 30px;
@@ -34,28 +38,34 @@
 .menu-button{
     all: unset;
     text-align: center;
-    user-select: none;
+    /* user-select: none; */
     width: 5vw;
     height: 5vh;
 }
+
+.menu-link {
+    /* user-select: none; */
+    padding: 1rem;
+}
+
+.menu-link:hover {
+    background-color: lightcoral;
+}
+
 .menu-button:hover {
     background-color: lightcoral;
 }
 
 .webpage {
     display: grid;
-    grid-template-columns: 1fr;
 }
 
 @media only screen and (max-width: 500px) {
-    .webpage {
-        grid-template-columns: 1fr;
+    .menu-hide-show-img{
+        width: 50px;
+        height: 50px;       
     }
-    .nav-bar {
-        display: flex;
-        flex-direction: column;
-    }
-    .menu-button {
-        width: 100%;
+    .nav-bar-horizontal {
+        height: 7vh;
     }
 }

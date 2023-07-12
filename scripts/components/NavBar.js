@@ -18,7 +18,7 @@ export function MenuBar({ items, props }){
         }
     );
     return React.createElement(
-        'div',
+        'nav',
         {className: 'nav-bar-vertical', ...props},
         ...menuItems
     );

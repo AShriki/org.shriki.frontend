@@ -1,9 +1,9 @@
-import {MenuBar, MenuButton, Page, MenuHideShow, MenusOverlay} from "../components/components.js";
+import {MenuBar, MenuButton, MenuLink, Page, MenuHideShow, MenusOverlay} from "../components/components.js";
 
 const menuItems = [
     {type: MenuHideShow, props: {}},
-    {type: MenuButton, props: {itemText: "about"}}, 
-    {type: MenuButton, props: {itemText: "projects"}}
+    {type: MenuLink, props: {itemText: "about"}}, 
+    {type: MenuLink, props: {itemText: "projects"}}
 ];
 
 const menuBar = React.createElement(
