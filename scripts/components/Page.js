@@ -1,7 +1,7 @@
-export function Page({ children, props }){   
+export function Page({ classname, children, props }){   
     return React.createElement(
         'div',
-        {className: 'webpage', ...props},
+        {className: className, ...props},
         children
     );
 }

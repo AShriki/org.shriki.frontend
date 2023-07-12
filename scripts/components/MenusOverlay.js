@@ -1,7 +1,9 @@
-export function MenusOverlay({ children }){   
+export function MenusOverlay({className, children}){   
     return React.createElement(
-        React.Fragment,
-        null,
-        children
+        'div',
+        {
+            className: className
+        },
+        ...children
     );
 }

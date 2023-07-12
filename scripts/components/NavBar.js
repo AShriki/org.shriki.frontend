@@ -1,26 +1,34 @@
 import {MenuHideShow} from "../components/components.js";
 
-export function NavBar({ items, props }){
+export function NavBar({ initialState, items, props }){
     // default to show
-    let [hidden, setHidden] = React.useState(false);
-    let menuItems = items.map(
-        (menuItemDetail)=>{
-            if (menuItemDetail.type == MenuHideShow){
-                menuItemDetail.props.setHidden = setHidden;
-                menuItemDetail.props.getHidden = hidden;
-            }else if (hidden){
-                return
+    let [hidden, setHidden] = React.useState(initialState);
+    let menuVisibleControlButton;
+    if (items[0].type == MenuHideShow){
+        items[0].props.setHidden = setHidden;
+        items[0].props.getHidden = hidden;
+        menuVisibleControlButton = React.createElement(
+            MenuHideShow,
+            items[0].props,
+        )
+        
+    }
+    let menuItems = [];
+    if ( !hidden ){
+        menuItems = items.slice(1).map(
+            (menuItemDetail)=>{
+                return React.createElement(
+                    menuItemDetail.type,
+                    menuItemDetail.props,
+                    menuItemDetail.children
+                )
             }
-            return React.createElement(
-                menuItemDetail.type,
-                menuItemDetail.props,
-                menuItemDetail.children
-            )
-        }
-    );
+        );
+    }
     return React.createElement(
-        'nav',
-        {className: 'nav-bar-vertical', ...props},
+        'div',
+        {className: props.flexContainerClassName},
+        menuVisibleControlButton,
         ...menuItems
     );
 }

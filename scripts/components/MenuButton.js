@@ -1,8 +1,8 @@
-export function MenuButton({ itemText, props }){
+export function MenuButton({ className, itemText, props }){
     return React.createElement(
         'button', 
         {
-            className: 'menu-button', 
+            className: className, 
             ...props
         },
         itemText
