@@ -1,6 +1,6 @@
 import {MenuHideShow} from "../components/components.js";
 
-export function NavBar({ initialState, items, props }){
+export function NavBar({ initialState, zIndex, items, props }){
     // default to show
     let [hidden, setHidden] = React.useState(initialState);
     let menuVisibleControlButton;
@@ -27,7 +27,10 @@ export function NavBar({ initialState, items, props }){
     }
     return React.createElement(
         'div',
-        {className: props.flexContainerClassName},
+        {
+            className: props.flexContainerClassName, 
+            style:{zIndex:zIndex}
+        },
         menuVisibleControlButton,
         ...menuItems
     );
