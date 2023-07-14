@@ -1,0 +1,106 @@
+body{
+    all: unset;
+}
+.nav-bar-vertical {
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.nav-bar-horizontal {
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    height: 100%;
+}
+.menu-hide-show-container{
+    background-clip: border-box;
+    background-color: transparent;
+    flex-shrink: 0;
+    flex-grow: 0;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+.menu-hide-show-img{
+    user-select: none;
+    max-height: 60px;
+    transition: .25s transform ease;
+}
+.hide-show-img-container{
+    width: 60px;
+    height: 60px;
+}
+.rotate-90 {
+    transform: rotate(90deg);
+}
+
+.menu-button{
+    all: unset;
+    text-align: center;
+    user-select: none;
+    height: 100%;
+}
+
+.menu-link-vert {
+    user-select: none;
+    text-align: center;
+    width: 100%;
+    padding: 0.5em 0;
+    background-color: lightgoldenrodyellow;
+}
+.menu-link-horiz {
+    user-select: none;
+    text-align: center;
+    width: fit-content;
+    padding: 5em 0.5em;
+    background-color: lightgoldenrodyellow;
+}
+.menu-link-vert:hover {
+    background-color: lightcoral;
+}
+.menu-link-horiz:hover {
+    background-color: lightseagreen;
+}
+.menu-button:hover {
+    background-color: lightcoral;
+}
+
+.webpage {
+    display: grid;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu-hide-show-container{
+        height: 10vh;     
+        width: 100%;
+    }
+    .nav-bar-horizontal {
+        overflow: hidden;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        width: 100%;
+    }
+    .nav-bar-vertical {
+        grid-column-end: 5;
+    }
+    .menu-link-horiz{
+        width: 100%;
+        padding: 0.5em 0;
+    }
+}

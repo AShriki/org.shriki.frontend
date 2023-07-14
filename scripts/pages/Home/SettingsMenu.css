@@ -1,0 +1,32 @@
+.settings-hide-show-container {
+    background-clip: border-box;
+    background-color: transparent;
+    grid-column-start: -3;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.settings-hide-show-img {
+    user-select: none;
+    max-height: 60px;
+    transition: .25s transform ease;
+    text-align: right;
+}
+
+.settings-rotate-90 {
+    transform: rotate(90deg);
+}
+.settings-nav-bar-vertical {
+    background-clip: border-box;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.settings-hide-show-img-container{
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+}

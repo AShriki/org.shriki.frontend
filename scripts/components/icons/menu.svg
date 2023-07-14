@@ -1,0 +1,8 @@
+<svg id="menu-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <line x1="150" y1="75" x2="150" y2="75" fill="none" stroke="#000" stroke-width="35" stroke-linecap="round"/>
+    <line id="egm7skSfRUa3" x1="50" y1="75" x2="250" y2="75" opacity="01" fill="none" stroke="#000" stroke-width="35" stroke-linecap="round"/>
+    <line x1="150" y1="150" x2="150" y2="150" fill="none" stroke="#000" stroke-width="35" stroke-linecap="round"/>
+    <line id="egm7skSfRUa5" x1="50" y1="150" x2="250" y2="150" opacity="01" fill="none" stroke="#000" stroke-width="35" stroke-linecap="round"/>
+    <line x1="150" y1="225" x2="150" y2="225" fill="none" stroke="#000" stroke-width="35" stroke-linecap="round"/>
+    <line id="egm7skSfRUa7" x1="50" y1="225" x2="250" y2="225" opacity="01" fill="none" stroke="#000" stroke-width="35" stroke-linecap="round"/>
+</svg>
