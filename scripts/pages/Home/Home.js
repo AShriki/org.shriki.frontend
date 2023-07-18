@@ -29,6 +29,19 @@ const settingsMenu = {
     }
 };
 
+const subSubMenu = {
+    type: NavMenu,
+    props: {
+        navAttributes:{className: 'nav-bar-vertical'},
+        menuVisible: true,
+        menuUlAttributes:{},
+        menuLiAttributes:{},
+        children:[
+            {type: MenuLink, props: {menuLinkAttributes: {className: 'menu-link-vert'}, itemText: "sub-things"}}, 
+            {type: MenuLink, props: {menuLinkAttributes: {className: 'menu-link-vert'}, itemText: "sub-stuff"}}
+        ]
+    }
+};
 
 const subMenu = {
     type: NavMenu,
@@ -39,7 +52,7 @@ const subMenu = {
         menuLiAttributes:{},
         children:[
             {type: MenuLink, props: {menuLinkAttributes: {className: 'menu-link-vert'}, itemText: "things"}}, 
-            {type: MenuLink, props: {menuLinkAttributes: {className: 'menu-link-vert'}, itemText: "stuff"}}
+            {type: MenuLink, props: {menuLinkAttributes: {className: 'menu-link-vert'}, itemText: "stuff"}, dropdown: subSubMenu}
         ]
     }
 };

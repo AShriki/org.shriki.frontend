@@ -8,7 +8,7 @@ function generateMenuItems(items=[], liAttributes){
             // debugger;
             let neighborComponents = []
             if (childAttributes.dropdown){
-                console.log("dropdown")
+                console.log(childAttributes.itemText)
                 neighborComponents.push(
                     React.createElement(
                         NavMenu,
@@ -26,7 +26,6 @@ function generateMenuItems(items=[], liAttributes){
                 ),
                 ...neighborComponents
             );
-            console.log(neighborComponents)
             return finalComponent;
         }
     );
@@ -34,6 +33,7 @@ function generateMenuItems(items=[], liAttributes){
 }
 
 export function NavMenu({ children, navAttributes, menuUlAttributes, menuLiAttributes, renderAsSubMenu = false}){
+    console.log(children)
     let menuItems = generateMenuItems(children, menuLiAttributes);
     if (!renderAsSubMenu){
         return React.createElement(
@@ -46,7 +46,7 @@ export function NavMenu({ children, navAttributes, menuUlAttributes, menuLiAttri
             )
         );
     } else {
-        console.log(menuItems)
+        // console.log(menuItems)
         return React.createElement(
             'ul',
             {...menuUlAttributes},
