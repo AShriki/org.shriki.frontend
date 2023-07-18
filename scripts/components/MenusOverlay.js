@@ -4,7 +4,7 @@ export function MenusOverlay({className, childrenSettings}){
             childSettings.type,
             {
                 ...childSettings.props
-            },
+            }
         );
     });
 

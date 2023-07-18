@@ -1,3 +1,17 @@
 @import "scripts/pages/Home/NavMenu.css";
 @import "scripts/pages/Home/SettingsMenu.css";
 @import "scripts/pages/Home/Home.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ul {
+    all: unset;
+}
+
+li {
+    all: unset;
+} */

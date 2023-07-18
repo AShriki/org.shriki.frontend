@@ -1,13 +1,13 @@
 // hides the parent menu
-export function MenuShowHide({ imgCSSClassName, transitionCSSClassName, hideShowImgContainerCSSClassName, hideShowContainerCSSClassName, menuVisible, contentType, content, props, menu }){
+export function MenuShowHide({ imgCSSClassName, transitionCSSClassName, hideShowImgContainerAttributes, hideShowContainerAttributes, menuVisible, contentType, content, props, menu }){
     let [getVisible, setVisibile] = React.useState(menuVisible);
     let children = [];
     children.push(
         React.createElement(
             'div',
             {
-                className: hideShowImgContainerCSSClassName,
-                onClick:()=>setVisibile(!getVisible)
+                onClick:()=>setVisibile(!getVisible),
+                ...hideShowImgContainerAttributes
             },
             React.createElement(
                 contentType, 
@@ -23,16 +23,14 @@ export function MenuShowHide({ imgCSSClassName, transitionCSSClassName, hideShow
         children.push(
             React.createElement(
                 menu.type,
-                {               
-                    ...menu
-                }
+                {...menu.props}
             )
         );
     }
     return React.createElement(
         'div',
         {
-            className: hideShowContainerCSSClassName,
+            ...hideShowContainerAttributes
         },
         ...children
     );

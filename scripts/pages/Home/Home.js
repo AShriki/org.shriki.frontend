@@ -1,16 +1,16 @@
-import {NavBar, MenuButton, MenuLink, Page, MenuShowHide, MenusOverlay} from "../../components/components.js";
+import {NavMenu, MenuButton, MenuLink, Page, MenuShowHide, MenusOverlay} from "../../components/components.js";
 
 const settingsItems = [
-    {type: MenuLink, props: {className: 'menu-link-vert', itemText: "Login/Register"}}
+    {type: MenuLink, props: {menuLinkAttributes: {className: 'menu-link-vert'}, itemText: "Login/Register"}}
 ];
 
 const settingsMenuSettings = {
-    type: NavBar,
-    zIndex: 100,
+    type: NavMenu,
     props:{
-        flexContainerClassName: 'settings-nav-bar-vertical',
-    },
-    items: settingsItems,
+        navAttributes:{},
+        menuUlAttributes:{className:'settings-nav-bar-vertical'},
+        children: settingsItems
+    }
 };
 
 const settingsMenu = {
@@ -18,10 +18,10 @@ const settingsMenu = {
     props: {
         contentType: 'img',
         menuVisible: false,
-        imgCSSClassName: 'settings-hide-show-img',
-        transitionCSSClassName: 'settings-rotate-90',
-        hideShowImgContainerCSSClassName: 'settings-hide-show-img-container',
-        hideShowContainerCSSClassName: 'settings-hide-show-container',
+        imgCSSClassName: 'hide-show-img',
+        transitionCSSClassName: 'rotate-90',
+        hideShowImgContainerAttributes: {className: 'settings-hide-show-img-container'},
+        hideShowContainerAttributes: {className: 'settings-hide-show-container'},
         props: {
             src:'./scripts/components/icons/settings-svgrepo-com.svg'
         },
@@ -29,33 +29,47 @@ const settingsMenu = {
     }
 };
 
-const navItems = [
-    {type: MenuLink, props: {className: 'menu-link-horiz', itemText: "about"}}, 
-    {type: MenuLink, props: {className: 'menu-link-horiz', itemText: "projects"}},
-];
 
-const navBarMenuSettings = {
-    type: NavBar,
-    zIndex: 90,
-    props:{
-        flexContainerClassName: 'nav-bar-horizontal',
-    },
-    items: navItems
+const subMenu = {
+    type: NavMenu,
+    props: {
+        navAttributes:{className: 'nav-bar-vertical'},
+        menuVisible: true,
+        menuUlAttributes:{},
+        menuLiAttributes:{},
+        children:[
+            {type: MenuLink, props: {menuLinkAttributes: {className: 'menu-link-vert'}, itemText: "things"}}, 
+            {type: MenuLink, props: {menuLinkAttributes: {className: 'menu-link-vert'}, itemText: "stuff"}}
+        ]
+    }
 };
 
-const navBar = {
+const NavMenuSettings = {
+    type: NavMenu,
+    props: {
+        navAttributes:{className: 'nav-bar-horizontal'},
+        menuUlAttributes:{},
+        menuLiAttributes:{},
+        children: [
+            {type: MenuLink, props: {menuLinkAttributes: {className: 'menu-link-horiz'}, itemText: "about"}, dropdown: subMenu}, 
+            {type: MenuLink, props: {menuLinkAttributes: {className: 'menu-link-horiz'}, itemText: "projects"}},
+        ]
+    }
+};
+
+const NavMenuContainer = {
     type: MenuShowHide, 
     props: {
         contentType: 'img',
         menuVisible: true,
-        imgCSSClassName: 'menu-hide-show-img', 
+        imgCSSClassName: 'hide-show-img', 
         transitionCSSClassName: 'rotate-90',
-        hideShowImgContainerCSSClassName: 'hide-show-img-container',
-        hideShowContainerCSSClassName: 'menu-hide-show-container',
+        hideShowImgContainerAttributes: {className: 'hide-show-img-container' },
+        hideShowContainerAttributes: {className: 'menu-hide-show-container'},
         props: {
             src: './scripts/components/icons/menu.svg',
         },
-        menu: navBarMenuSettings
+        menu: NavMenuSettings
     }
 };
 
@@ -65,7 +79,7 @@ export function HomePage(){
         {
             className: 'menus-grid',
             childrenSettings: [
-                navBar,
+                NavMenuContainer,
                 settingsMenu
             ]
         }

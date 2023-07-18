@@ -1,4 +1,4 @@
-.settings-hide-show-container {
+/* .settings-hide-show-container {
     background-clip: border-box;
     background-color: transparent;
     grid-column-start: -3;
@@ -14,9 +14,6 @@
     text-align: right;
 }
 
-.settings-rotate-90 {
-    transform: rotate(90deg);
-}
 .settings-nav-bar-vertical {
     background-clip: border-box;
     overflow: hidden;
@@ -25,8 +22,10 @@
     align-items: center;
     flex-direction: column;
 }
+
 .settings-hide-show-img-container{
     height: 50px;
     display: flex;
     justify-content: flex-end;
-}
+} */
+

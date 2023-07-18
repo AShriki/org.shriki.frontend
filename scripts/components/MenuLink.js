@@ -1,12 +1,8 @@
-export function MenuLink({ className, itemText, props }){
-    // console.log(className)
-    // console.log(itemText)
-    // console.log(props)
+export function MenuLink({ menuLinkAttributes, itemText}){
     return React.createElement(
         'a', 
         {
-            className: className, 
-            ...props
+            ...menuLinkAttributes
         },
         itemText
     );
