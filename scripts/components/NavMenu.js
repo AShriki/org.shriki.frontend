@@ -5,18 +5,15 @@ function generateMenuItems(items=[], liAttributes){
 
     let newItems = items.map( 
         (childAttributes,i)=>{
-            // debugger;
             let neighborComponents = []
-            if (childAttributes.dropdown){
-                console.log(childAttributes.itemText)
+            if (childAttributes.subMenu){
                 neighborComponents.push(
                     React.createElement(
                         NavMenu,
-                        {...childAttributes.dropdown.props, renderAsSubMenu: true},
+                        {...childAttributes.subMenu.props, renderAsSubMenu: true},
                     )
                 )
             }
-            console.log("run")
             let finalComponent = React.createElement(
                 'li',
                 {...liAttributes},
@@ -33,7 +30,6 @@ function generateMenuItems(items=[], liAttributes){
 }
 
 export function NavMenu({ children, navAttributes, menuUlAttributes, menuLiAttributes, renderAsSubMenu = false}){
-    console.log(children)
     let menuItems = generateMenuItems(children, menuLiAttributes);
     if (!renderAsSubMenu){
         return React.createElement(
@@ -46,7 +42,6 @@ export function NavMenu({ children, navAttributes, menuUlAttributes, menuLiAttri
             )
         );
     } else {
-        // console.log(menuItems)
         return React.createElement(
             'ul',
             {...menuUlAttributes},
